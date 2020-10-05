@@ -1,6 +1,6 @@
 {
   "name": "houdini-static-gradient",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "static-gradient.worklet.js",
   "scripts": {

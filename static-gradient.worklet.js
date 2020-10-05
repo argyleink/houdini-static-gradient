@@ -1,13 +1,4 @@
-const paint_name = 'static-gradient'
-const offset = .01
-const start  = 1 + offset
-const sizekeys = {
-  small:  2,
-  medium: 8,
-  large:  16,
-}
-
-registerPaint(paint_name, class StaticGradient {
+registerPaint('static-gradient', class StaticGradient {
   static get inputArguments() {
     return [
       'to-top | to-right | to-bottom | to-left',
@@ -18,7 +9,13 @@ registerPaint(paint_name, class StaticGradient {
 
   paint(ctx, bounds, props, args) {
     const { width:w, height:h } = bounds
-
+    const offset = .01
+    const start  = 1 + offset
+    const sizekeys = {
+      small:  2,
+      medium: 8,
+      large:  16,
+    }
     let [ direction, color, size ] = args.map(arg => arg?.toString() || undefined)
 
     if (isNaN(parseInt(size)))
