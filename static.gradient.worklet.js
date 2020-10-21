@@ -42,13 +42,13 @@ registerPaint('static-gradient', class StaticGradient {
           case 'to-top':
             if (Math.random() < (start - y / (h*end))) continue
             break;
-          case 'to-right':
+          case 'to-left':
             if (Math.random() < (start - x / (w*end))) continue
             break;
           case 'to-bottom':
             if (Math.random() > (start - y / (h*end))) continue
             break;
-          case 'to-left':
+          case 'to-right':
             if (Math.random() > (start - x / (w*end))) continue
             break;
         }
