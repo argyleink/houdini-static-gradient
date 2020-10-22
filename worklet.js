@@ -27,7 +27,11 @@ registerPaint('static-gradient', class StaticGradient {
       large:  16,
     }
 
-    let [ direction, color, size ] = this.parseProps(props)
+    let [ 
+      direction = 'to-top', 
+      color = 'hotpink', 
+      size, 
+    ] = this.parseProps(props)
 
     size = isNaN(parseInt(size))
       ? sizekeys[size]
