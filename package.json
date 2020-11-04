@@ -11,7 +11,7 @@
     "dev:server": "browser-sync app --files \"app/**/*, !app/css/**\" --no-open --no-notify",
     "prod:server": "browser-sync dist --no-open --no-notify --no-ghost-mode",
     "build:pre:css": "postcss app/css/index.css -o dist/bundle.css --env production",
-    "build:post:copy": "cp -r app/ dist/",
+    "build:post:copy": "cp app/index.html dist/ && mkdir dist/js && cp app/js/* dist/js/",
     "build": "rimraf dist && concurrently npm:build:pre:* && concurrently npm:build:post:*",
     "start": "concurrently --kill-others npm:dev:*",
     "production": "npm run build && npm run prod:server"
