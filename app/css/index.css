@@ -1,0 +1,102 @@
+:root {
+  --surface: lch(10 0 0);
+  --text: lch(80 0 0);
+  --brand: lch(64 40 347);
+
+  @media (prefers-color-scheme: light) {
+    --surface: lch(98 0 0);
+    --text: lch(30 0 0);
+    --brand: lch(65 64 350);
+
+    @media (dynamic-range: high) {
+      --brand: color(display-p3 1 0 1);
+    }
+  }
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  place-content: center;
+  gap: 2ch;
+
+  background: var(--surface);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
+}
+
+body,p,ul,dl,dd,dt,figure,
+h1,h2,h3,h4,h5,h6,small {
+  margin: 0;
+}
+
+a {
+  color: color(display-p3 0 .5 1);
+
+  &:visited {
+    color: color(display-p3 .5 0 1);
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.5;
+  max-inline-size: 25ch;
+}
+
+p {
+  line-height: 2;
+  font-size: 1.25rem;
+  font-weight: 300;
+  max-inline-size: 45ch;
+}
+
+::selection {
+  background-color: var(--brand);
+}
+
+h1 {
+  font-weight: bold;
+  line-height: 1.1;
+  font-size: 9rem;
+  background-image: 
+    paint(static-gradient, to-top, orange, 6),
+    paint(static-gradient, to-top, red, 6),
+    linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%))
+  ;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fire-dance 2s steps(5) infinite;
+}
+
+@keyframes fire-dance {
+  0%,10%,20%,30%,40%,50% { 
+    background-image: 
+      paint(static-gradient, to-top, orange, 6),
+      paint(static-gradient, to-top, red, 6),
+      linear-gradient(hsl(0 0% 100%), hsl(0 0% 100%))
+    ;
+  }
+}
+
+hr {
+  border: none;
+  height: 10ch;
+  margin: 0;
+  background-image: 
+    paint(static-gradient, to-bottom, hsl(0 0% 65%), 6)
+  ;
+}
