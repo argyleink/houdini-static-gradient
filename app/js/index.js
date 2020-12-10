@@ -4,3 +4,7 @@
 
   CSS.paintWorklet.addModule(`/js/worklet.js`)
 })()
+
+document.querySelector('h1').addEventListener('click', e => {
+  e.target.classList.toggle('paused')
+})

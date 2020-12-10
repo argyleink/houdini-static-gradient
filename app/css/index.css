@@ -35,6 +35,11 @@ body {
   }
 }
 
+small {
+  text-align: end;
+  display: block;
+}
+
 body,p,ul,dl,dd,dt,figure,
 h1,h2,h3,h4,h5,h6,small {
   margin: 0;
@@ -85,6 +90,10 @@ h1 {
   
   @media (prefers-reduced-motion: no-preference) {
     animation: fire-dance 100s linear infinite;
+  }
+
+  &.paused {
+    animation-play-state: paused;
   }
 }
 
