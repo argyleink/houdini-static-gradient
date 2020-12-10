@@ -82,7 +82,10 @@ h1 {
   background-position: bottom;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fire-dance 100s linear infinite;
+  
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fire-dance 100s linear infinite;
+  }
 }
 
 @keyframes fire-dance {
